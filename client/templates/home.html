@@ -1,0 +1,26 @@
+<template name="home">
+    <div class="container">
+        <div class="page-header">
+            <h1>Latest messages
+                <small><i class="glyphicon glyphicon-map-marker"></i> {{userLocation.name}}
+                </small>
+            </h1>
+        </div>
+        {{#if currentUser}}
+        <form class="form-inline">
+            <div class="form-group">
+                <input type="text" class="form-control" id="message" placeholder="Share something!">
+            </div>
+            <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+        <hr/>
+        {{/if}}
+        <ul class="list-group">
+            {{data}}
+            {{#each messages}}
+            {{> message}}
+            {{/each}}
+        </ul>
+    </div>
+
+</template>
