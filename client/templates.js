@@ -17,6 +17,10 @@ Template.home.events({
     'submit': function (event) {
         event.preventDefault();
 
+        if (!event.target.message.value) {
+            return false;
+        }
+
         Meteor.call('postMessage', event.target.message.value);
         event.target.message.value = "";
     }
